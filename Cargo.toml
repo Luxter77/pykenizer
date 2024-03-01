@@ -1,0 +1,15 @@
+[package]
+name = "pykenizer"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "pykenizer"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = { version = "0.20.3", features = ["extension-module"] }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
